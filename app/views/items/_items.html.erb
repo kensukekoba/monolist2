@@ -4,7 +4,6 @@
       <div class="item-box">
         <div class="image">
           <div class="img-wrap">
-            <% #TODO 商品画像 %>
             <% if item['imageFlag'] ==1 %>
               <%= image_tag(item['mediumImageUrls'].first['imageUrl']) %>
             <% else %>
@@ -14,7 +13,6 @@
         </div>
         <div class="detail">
           <p class="title">
-            <% #TODO 商品タイトル %>
             <%= link_to item['itemName'], item['itemUrl'] %>
           </p>
         </div>
