@@ -1,3 +1,11 @@
+<% content_for :title do %>
+  <%= @user.name %> -monolist
+<% end %>
+<% content_for :description do %>
+  <%= @user.name %>に関する情報です。
+<% end %>
+
+
 <%= render 'profile' , user: @user %>
 
 
