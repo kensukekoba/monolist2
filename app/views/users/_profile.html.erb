@@ -20,15 +20,15 @@
         </div>
       </li>
       <li>
-        <div class="status-label">WANT</div>
+        <div class="status-label"><%= link_to "WANT" , want_items_path(@user) %></div>
         <div id="want_count" class="status-value">
-          789
+          <%= user.wants.count %>
         </div>
       </li>
       <li>
         <div class="status-label">HAVE</div>
         <div id="have_count" class="status-value">
-          123
+          <%= user.haves.count %>
         </div>
       </li>
     </ul>
