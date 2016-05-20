@@ -1,0 +1,60 @@
+<h1><center>Have Ranking!</center></h1>
+
+<div class="container">
+  <div class="container-inner inner-default clearfix">
+    <% @have_items.each do |have_item| %>
+
+        <% if @have_items.index(have_item) == 0 or @have_items.index(have_item) == 1 or @have_items.index(have_item) == 2 %>
+
+            <div class="item-box-top">
+                <div class="rank_number">
+                    <p class="title h2">
+                        No.<%= @have_items.index(have_item) + 1 %>
+                      </p>
+                </div>
+                <div class="image">
+                    <div class="img-wrap">
+                        <% if have_item.large_image.present? %>
+                            <%= image_tag(have_item.large_image , alt: have_item.title) %>
+                        <% else %>
+                            <%= image_tag("no-image.png" , alt: have_item.title) %>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="detail">
+                    <p class="title">
+                        <%= have_item.title %>
+                    </p>
+                </div>
+              <%= render 'items/action' , item: have_item %>
+            </div>
+
+        <% else %>
+
+            <div class="item-box">
+                <div class="rank_number">
+                    <p class="title h3">
+                    No.<%= @have_items.index(have_item) + 1 %>
+                    </p>
+                </div>
+                <div class="image">
+                    <div class="img-wrap">
+                        <% if have_item.large_image.present? %>
+                            <%= image_tag(have_item.large_image , alt: have_item.title) %>
+                        <% else %>
+                            <%= image_tag("no-image.png" , alt: have_item.title) %>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="detail">
+                    <p class="title">
+                        <%= have_item.title %>
+                    </p>
+                </div>
+                <%= render 'items/action' , item: have_item %>
+            </div>
+        
+        <% end %>  
+    <% end %>
+  </div>
+</div>
