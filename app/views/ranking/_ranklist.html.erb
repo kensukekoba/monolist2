@@ -1,17 +1,13 @@
-aaaa
-
 <div class="container">
   <div class="container-inner inner-default clearfix">
-aaaa
+
     <% items.each do |item| %>
-aaaa
         <% if items.index(item) == 0 or items.index(item) == 1 or items.index(item) == 2 %>
-aaaaa
             <div class="item-box-top">
                 <div class="rank_number">
                     <p class="title h2">
                         No.<%= items.index(item) + 1 %>
-                      </p>
+                    </p>
                 </div>
                 <div class="image">
                     <div class="img-wrap">
@@ -54,7 +50,6 @@ aaaaa
                 </div>
                 <%= render 'items/action' , item: item %>
             </div>
-        
         <% end %>  
     <% end %>
   </div>
