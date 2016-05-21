@@ -2,7 +2,7 @@
   <div class="container-inner inner-default clearfix">
 
     <% items.each do |item| %>
-        <% if items.index(item) == 0 or items.index(item) == 1 or items.index(item) == 2 %>
+        <% if items.index(item) < 3 %>
             <div class="item-box-top">
                 <div class="rank_number">
                     <p class="title h2">
