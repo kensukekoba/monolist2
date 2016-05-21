@@ -1,12 +1,12 @@
 class RankingController < ApplicationController
     
     def want
-        @want_items = Ownership.where(type: "Want").limit(10).group(:item_id).order('count_all desc').count
+        @want_items = Want.group(:item_id).order('count_all desc').limit(10).count
         .keys.map{|id| Item.find(id)}
     end
     
     def have
-        @have_items = Ownership.where(type: "Have").limit(10).group(:item_id).order('count_all desc').count
+        @have_items = Have.group(:item_id).order('count_all desc').limit(10).count
         .keys.map{|id| Item.find(id)}
     end
 
